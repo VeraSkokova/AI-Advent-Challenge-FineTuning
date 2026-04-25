@@ -1,0 +1,39 @@
+=== Day 7: Confidence & Redundancy Benchmark ===
+Loaded 30 items from dataset.
+
+Processing TKT-CLN-1 [clean]... Category=REFUND | TicketId=none | 10688ms | 851 tokens
+Processing TKT-CLN-2 [clean]... Category=UNKNOWN | TicketId=none | 6362ms | 598 tokens
+Processing TKT-CLN-3 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 8001ms | 698 tokens
+Processing TKT-CLN-4 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 6817ms | 765 tokens
+Processing TKT-CLN-5 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 5069ms | 652 tokens
+Processing TKT-CLN-6 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 6328ms | 654 tokens
+Processing TKT-CLN-7 [clean]... Category=UNKNOWN | TicketId=none | 3459ms | 440 tokens
+Processing TKT-CLN-8 [clean]... Category=UNKNOWN | TicketId=none | 6948ms | 839 tokens
+Processing TKT-CLN-9 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 6884ms | 699 tokens
+Processing TKT-CLN-10 [clean]... Category=TECHNICAL_ISSUE | TicketId=none | 7767ms | 834 tokens
+Processing TKT-EDG-1 [edge_case]... Category=REJECTED | TicketId=none | 7120ms | 971 tokens
+Processing TKT-EDG-2 [edge_case]... Category=COMPLIMENT | TicketId=none | 6150ms | 695 tokens
+Processing TKT-EDG-3 [edge_case]... Category=UNKNOWN | TicketId=none | 5009ms | 843 tokens
+Processing TKT-EDG-4 [edge_case]... Category=REFUND | TicketId=none | 5435ms | 742 tokens
+Processing TKT-EDG-5 [edge_case]... Category=REFUND | TicketId=none | 6421ms | 936 tokens
+Processing TKT-EDG-6 [edge_case]... Category=REFUND | TicketId=none | 7047ms | 922 tokens
+Processing TKT-EDG-7 [edge_case]... Category=REFUND | TicketId=none | 5871ms | 775 tokens
+Processing TKT-EDG-8 [edge_case]... Category=UNKNOWN | TicketId=none | 6254ms | 936 tokens
+Processing TKT-EDG-9 [edge_case]... Category=TECHNICAL_ISSUE | TicketId=none | 7864ms | 843 tokens
+Processing TKT-EDG-10 [edge_case]... Category=REFUND | TicketId=none | 4931ms | 775 tokens
+Processing TKT-NSY-1 [noisy]... Category=UNKNOWN | TicketId=none | 3697ms | 637 tokens
+Processing TKT-NSY-2 [noisy]... Category=UNKNOWN | TicketId=none | 3440ms | 422 tokens
+Processing TKT-NSY-3 [noisy]... Category=UNKNOWN | TicketId=none | 3737ms | 632 tokens
+Processing TKT-NSY-4 [noisy]... Category=UNKNOWN | TicketId=none | 3388ms | 427 tokens
+Processing TKT-NSY-5 [noisy]... Category=UNKNOWN | TicketId=none | 3564ms | 632 tokens
+Processing TKT-NSY-6 [noisy]... Category=UNKNOWN | TicketId=none | 3849ms | 643 tokens
+Processing TKT-NSY-7 [noisy]... Category=UNKNOWN | TicketId=none | 3541ms | 626 tokens
+Processing TKT-NSY-8 [noisy]... Category=UNKNOWN | TicketId=none | 5011ms | 665 tokens
+Processing TKT-NSY-9 [noisy]... Category=UNKNOWN | TicketId=none | 3813ms | 636 tokens
+Processing TKT-NSY-10 [noisy]... Category=UNKNOWN | TicketId=none | 3502ms | 420 tokens
+
+=== Summary ===
+Total Processed : 30
+Total Rejected  : 16
+Total Tokens    : 21208
+Avg Latency     : 5598ms

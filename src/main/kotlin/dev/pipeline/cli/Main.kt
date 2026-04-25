@@ -1,6 +1,12 @@
 package dev.pipeline.cli
 
+import com.aallam.openai.api.logging.LogLevel
+import com.aallam.openai.client.LoggingConfig
+import com.aallam.openai.client.OpenAI
+import com.aallam.openai.client.OpenAIConfig
+import com.aallam.openai.client.OpenAIHost
 import dev.pipeline.baseline.runBaselineEvaluation
+import dev.pipeline.confidence.runDay7Benchmark
 import dev.pipeline.validation.runValidation
 import kotlinx.coroutines.runBlocking
 
@@ -10,10 +16,10 @@ fun main() {
     while (true) {
         println()
         println("Choose an option:")
-        println("  1) Validate dataset")
-        println("  2) Run Baseline (Ollama)")
-        println("  3) OpenAI Fine-Tuning (mock run)")
-        println("  4) Exit")
+        println("  1) Validate dataset (Day 6)")
+        println("  2) Run Baseline – Ollama (Day 6)")
+        println("  3) Run Day 7 Confidence & Redundancy Benchmark")
+        println("  0) Exit")
         print("> ")
 
         when (readlnOrNull()?.trim()) {
@@ -33,17 +39,23 @@ fun main() {
 
             "3" -> {
                 println()
-                println("  [Mock] OpenAI Fine-Tuning client initialized.")
-                println("  [Mock] Would upload train_tickets.jsonl, create job, and poll status.")
-                println("  No real API call was made.")
+                val config = OpenAIConfig(
+                    token = "ollama",
+                    host = OpenAIHost(baseUrl = "http://localhost:11434/v1/"),
+                    logging = LoggingConfig(logLevel = LogLevel.None),
+                )
+                val client = OpenAI(config)
+                runBlocking {
+                    runDay7Benchmark(client)
+                }
             }
 
-            "4" -> {
+            "0" -> {
                 println("Goodbye.")
                 return
             }
 
-            else -> println("Invalid option. Please enter 1-4.")
+            else -> println("Invalid option. Please enter 0-3.")
         }
     }
 }
