@@ -24,6 +24,10 @@ dependencies {
     // Ktor engine required by openai-client
     implementation("io.ktor:ktor-client-okhttp:3.1.1")
 
+    // LangChain4j – Ollama integration
+    implementation("dev.langchain4j:langchain4j-ollama:1.0.0-beta3")
+    implementation("dev.langchain4j:langchain4j:1.0.0-beta3")
+
     // Testing
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")

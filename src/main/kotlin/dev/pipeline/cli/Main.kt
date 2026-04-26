@@ -7,6 +7,7 @@ import com.aallam.openai.client.OpenAIConfig
 import com.aallam.openai.client.OpenAIHost
 import dev.pipeline.baseline.runBaselineEvaluation
 import dev.pipeline.confidence.runDay7Benchmark
+import dev.pipeline.routing.runRoutingDemo
 import dev.pipeline.validation.runValidation
 import kotlinx.coroutines.runBlocking
 
@@ -19,6 +20,7 @@ fun main() {
         println("  1) Validate dataset (Day 6)")
         println("  2) Run Baseline – Ollama (Day 6)")
         println("  3) Run Day 7 Confidence & Redundancy Benchmark")
+        println("  4) Run Day 8 LLM Routing Demo (LangChain4j)")
         println("  0) Exit")
         print("> ")
 
@@ -50,12 +52,17 @@ fun main() {
                 }
             }
 
+            "4" -> {
+                println()
+                runRoutingDemo()
+            }
+
             "0" -> {
                 println("Goodbye.")
                 return
             }
 
-            else -> println("Invalid option. Please enter 0-3.")
+            else -> println("Invalid option. Please enter 0-4.")
         }
     }
 }
