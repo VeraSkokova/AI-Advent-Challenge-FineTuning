@@ -56,6 +56,11 @@ Classification rules:
 - confidence: float between 0.0 and 1.0 — how certain you are about your classification
 - status: "OK" if you are confident, "UNSURE" if any field is uncertain
 
+Confidence and status rules:
+- For standard, detailed tickets with clear intent, you MUST return status="OK" and confidence=0.9 or 1.0. Do not artificially lower your confidence.
+- If the ticket is shorter than 2 sentences (e.g. "Problem leading to access difficulties"), return status="UNSURE" and confidence=0.5.
+- If the ticket is highly ambiguous (e.g. could be both Incident and Problem, or priority is impossible to guess), return status="UNSURE" and confidence=0.6.
+
 Return exactly this JSON shape:
 {"type": "...", "priority": "...", "language": "...", "confidence": 0.0, "status": "OK"}
 
