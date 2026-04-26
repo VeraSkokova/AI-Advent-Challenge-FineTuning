@@ -9,6 +9,7 @@ import dev.pipeline.baseline.runBaselineEvaluation
 import dev.pipeline.confidence.runDay7Benchmark
 import dev.pipeline.inference.runInferenceComparison
 import dev.pipeline.routing.runRoutingDemo
+import dev.pipeline.tiered.runTieredInference
 import dev.pipeline.validation.runValidation
 import kotlinx.coroutines.runBlocking
 
@@ -23,6 +24,7 @@ fun main() {
         println("  3) Run Day 7 Confidence & Redundancy Benchmark")
         println("  4) Run Day 8 LLM Routing Demo (LangChain4j)")
         println("  5) Run Day 9 Inference Comparison (Monolithic vs Multi-Stage)")
+        println("  6) Run Day 10 Tiered Inference (Micro + Fallback)")
         println("  0) Exit")
         print("> ")
 
@@ -64,12 +66,17 @@ fun main() {
                 runInferenceComparison()
             }
 
+            "6" -> {
+                println()
+                runTieredInference()
+            }
+
             "0" -> {
                 println("Goodbye.")
                 return
             }
 
-            else -> println("Invalid option. Please enter 0-5.")
+            else -> println("Invalid option. Please enter 0-6.")
         }
     }
 }
